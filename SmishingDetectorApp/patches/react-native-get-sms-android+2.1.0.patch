@@ -1,0 +1,58 @@
+diff --git a/node_modules/react-native-get-sms-android/android/build.gradle b/node_modules/react-native-get-sms-android/android/build.gradle
+index 0de40fc..eff1c8c 100644
+--- a/node_modules/react-native-get-sms-android/android/build.gradle
++++ b/node_modules/react-native-get-sms-android/android/build.gradle
+@@ -1,27 +1,21 @@
+-
+ buildscript {
+     repositories {
+         google()
+-        jcenter()
++        mavenCentral()
+     }
+-
+     dependencies {
+-        classpath 'com.android.tools.build:gradle:3.3.1'
++        classpath 'com.android.tools.build:gradle:4.1.0'
+     }
+ }
+-
+ apply plugin: 'com.android.library'
+-
+ def safeExtGet(prop, fallback) {
+     rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+ }
+-
+ android {
+-    compileSdkVersion safeExtGet('compileSdkVersion', 28)
+-
++    compileSdkVersion safeExtGet('compileSdkVersion', 33)
+     defaultConfig {
+         minSdkVersion safeExtGet('minSdkVersion', 16)
+-        targetSdkVersion safeExtGet('targetSdkVersion', 28)
++        targetSdkVersion safeExtGet('targetSdkVersion', 33)
+         versionCode 1
+         versionName "1.0.0"
+     }
+@@ -29,17 +23,11 @@ android {
+         abortOnError false
+     }
+ }
+-
+ repositories {
+     google()
+-    maven {
+-        // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+-        url "$rootDir/../node_modules/react-native/android"
+-    }
+-    jcenter()
++    mavenCentral()
++    maven { url "$rootDir/../node_modules/react-native/android" }
+ }
+-
+ dependencies {
+-    compileOnly "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
++    implementation "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
+ }
+\ No newline at end of file
+-  
