@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Malicious Test Page</title>
+</head>
+<body>
+    <h1>This is a test page for the sandbox.</h1>
+    <p>A download should start automatically.</p>
+
+    <script>
+        // This script will automatically trigger a download
+        window.onload = function() {
+            // Create a hidden link element
+            var a = document.createElement('a');
+            a.href = '/malicious_test_file.zip'; // The file to download
+            a.download = 'malicious_test_file.zip'; // The name to save it as
+            document.body.appendChild(a);
+            
+            // Programmatically click the link
+            a.click();
+            
+            // Clean up
+            document.body.removeChild(a);
+        };
+    </script>
+</body>
+</html>

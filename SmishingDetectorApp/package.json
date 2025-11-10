@@ -8,13 +8,17 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-  "postinstall": "patch-package"
+    "postinstall": "patch-package"
   },
   "dependencies": {
+    "crypto-js": "^4.2.0",
     "patch-package": "^8.0.1",
     "react": "18.2.0",
     "react-native": "0.74.1",
-    "react-native-get-sms-android": "^2.1.0"
+    "react-native-get-sms-android": "^2.1.0",
+    "react-native-keychain": "^10.0.0",
+    "react-native-rsa-native": "^2.0.5",
+    "react-native-sensitive-info": "^5.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -24,6 +28,7 @@
     "@react-native/eslint-config": "0.74.83",
     "@react-native/metro-config": "0.74.83",
     "@react-native/typescript-config": "0.74.83",
+    "@types/crypto-js": "^4.2.2",
     "@types/react": "^18.2.6",
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^29.6.3",
